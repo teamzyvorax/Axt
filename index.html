@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b1b" />
+  <meta name="description" content="ZYVORA Domains — manage free subdomains from one premium dashboard." />
+  <title>ZYVORA Domains</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="ZYVORA Domains home">
+        <span class="brand-mark">z</span><span>zyvora</span><small>.in</small>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="notifications" aria-label="Notifications">♧</button>
+        <button class="dashboard-btn">Dashboard</button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">⋮</button>
+      </div>
+    </header>
+
+    <main id="top" class="content">
+      <section class="hero-row">
+        <div>
+          <p class="eyebrow">ZYVORA / FREE DOMAINS</p>
+          <h1>Your Domains</h1>
+          <p class="muted">A clean control center for your ZYVORA subdomains.</p>
+        </div>
+        <div class="hero-status"><span></span> All systems operational</div>
+      </section>
+
+      <section class="notice" id="notice">
+        <div class="notice-icon">★</div>
+        <div class="notice-copy">
+          <h2>Unlock more domains</h2>
+          <p>You have used your free domain. Star <b>nevercode-in/FreeDomains</b> on GitHub to unlock up to 5 domains.</p>
+          <div class="notice-actions">
+            <a class="outline-btn" href="https://github.com/nevercode-in/FreeDomains" target="_blank" rel="noreferrer">☆ &nbsp; Star repo ↗</a>
+            <button class="outline-btn" id="refreshBtn">⟳ &nbsp; Refresh status</button>
+          </div>
+        </div>
+        <button class="close-notice" id="closeNotice" aria-label="Close">×</button>
+      </section>
+
+      <button class="add-domain" id="addDomainBtn"><span>＋</span> Add New Subdomain</button>
+
+      <section class="domains-section">
+        <div class="section-heading">
+          <h2>Your Subdomains <span>(1)</span></h2>
+          <button class="filter-btn">Active ▾</button>
+        </div>
+
+        <article class="domain-card" data-domain="zyvorax.isroot.in">
+          <div class="domain-main">
+            <div class="domain-title"><span class="globe">◎</span> z<span>yvorax</span>.isroot.in.</div>
+            <div class="domain-id">ID: 6ae6d9e3fc8dfbec903986e5</div>
+          </div>
+          <div class="nameservers">
+            <span>ns1.nevercode.in</span>
+            <span>ns2.nevercode.in</span>
+          </div>
+          <div class="domain-meta">
+            <span class="badge active"><i></i> ACTIVE</span>
+            <span class="expiry">◷ Expires 01/11/2027</span>
+          </div>
+          <div class="card-actions">
+            <button class="renew-btn" id="renewBtn">⟳ &nbsp; Renew</button>
+            <button class="manage-btn" id="manageBtn">⚙ &nbsp; Manage</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="quick-links">
+        <a href="#dns"><span>⌁</span><b>DNS</b><small>Nameserver status</small></a>
+        <a href="#security"><span>⌾</span><b>Security</b><small>Domain protection</small></a>
+        <a href="#docs"><span>?</span><b>Docs</b><small>Setup guides</small></a>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 ZYVORA</span>
+      <span><a href="#privacy">Privacy</a> · <a href="#terms">Terms</a> · <a href="#support">Support</a></span>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <dialog id="domainDialog">
+    <form method="dialog" class="modal">
+      <button class="modal-close" value="cancel" aria-label="Close">×</button>
+      <p class="eyebrow">NEW DOMAIN</p>
+      <h2>Add a subdomain</h2>
+      <p class="muted">Choose a name for your ZYVORA subdomain.</p>
+      <label>Subdomain name<input id="subdomainInput" placeholder="my-project" autocomplete="off" /></label>
+      <div class="domain-preview"><span id="previewName">my-project</span>.isroot.in</div>
+      <button class="primary-btn" id="confirmDomain" value="default">Request subdomain</button>
+    </form>
+  </dialog>
+
+  <dialog id="manageDialog">
+    <div class="modal">
+      <button class="modal-close" id="manageClose" aria-label="Close">×</button>
+      <p class="eyebrow">DOMAIN MANAGEMENT</p>
+      <h2>zyvorax.isroot.in</h2>
+      <div class="manage-grid">
+        <div><small>Status</small><b>● Active</b></div>
+        <div><small>Expires</small><b>01/11/2027</b></div>
+        <div><small>Nameserver 1</small><b>ns1.nevercode.in</b></div>
+        <div><small>Nameserver 2</small><b>ns2.nevercode.in</b></div>
+      </div>
+      <button class="primary-btn" id="copyDomain">Copy domain</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
